@@ -21,7 +21,11 @@ public class ItemList {
 	}
 
 	public static String findItemTypeByName(String name) {
+		if (mItem.get(name) == null) {
+			return "";
+		} else {
+			return mItem.get(name);
+		}
 
-		return mItem.get(name);
 	}
 }

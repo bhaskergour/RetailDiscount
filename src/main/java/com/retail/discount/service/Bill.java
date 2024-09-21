@@ -12,29 +12,13 @@ public class Bill {
 
 	private Integer billNumber;
 	private double payableAmount;
-	public double totalAmount;
-	public double discountItemAmount;
-	public double nonDiscountItemAmount;
-
-	public double getDiscountItemAmount() {
-		return discountItemAmount;
-	}
-
-	public void setDiscountItemAmount(double discountItemAmount) {
-		this.discountItemAmount = discountItemAmount;
-	}
-
-	public double getNonDiscountItemAmount() {
-		return nonDiscountItemAmount;
-	}
-
-	public void setNonDiscountItemAmount(double nonDiscountItemAmount) {
-		this.nonDiscountItemAmount = nonDiscountItemAmount;
-	}
 
 	private User user;
 
 	private List<BillItem> items;
+
+	public Bill() {
+	}
 
 	public Bill(Integer billNumber, User user, List<BillItem> items) {
 		super();
@@ -73,18 +57,6 @@ public class Bill {
 
 	public void setUser(User user) {
 		this.user = user;
-	}
-
-	public double getTotalAmount() {
-		return totalAmount;
-	}
-
-	public Bill() {
-		super();
-	}
-
-	public void setTotalAmount(double totalAmount) {
-		this.totalAmount = totalAmount;
 	}
 
 	@Override

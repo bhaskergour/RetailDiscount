@@ -17,7 +17,8 @@ public class EmployeeDiscount implements Discount {
 
 			double discountedPrice = item.getPrice();
 			// set discounted price of items when item is not a grocery item.
-			if (!item.getItemType().equals(Constants.ITEM_TYPE_GROCERY)) {
+			if (!item.getItemType().equals(Constants.ITEM_TYPE_GROCERY)
+					&& !item.getItemType().equals(Constants.ITEM_TYPE_OTHER)) {
 				double discountAmount = item.getPrice() * Constants.EMPLOYEE_DISCOUNT_RATE;
 				discountedPrice = item.getPrice() - discountAmount;
 			}

@@ -1,6 +1,7 @@
 package com.retail.discount.controller;
 
 import java.io.IOException;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,19 +32,27 @@ public class CalculateBill {
 	@Autowired
 	Bill bill;
 
-	@GetMapping("/generatebill")	
-	public Bill getBill(@RequestBody BillGeneration bg) throws  IOException {
+	@GetMapping("/generatebill")
+	public Bill getBill(@RequestBody BillGeneration bg) throws IOException {
 
-		UserList.addUser();
-		ItemList.addItem();
-		User userData = userlist.findUserByID(bg.getUserID());
+		User uData;
+
+		Optional<User> checkNull = Optional.ofNullable(userlist.findUserByID(bg.getUserID()));
 		bill.setBillNumber(bg.getBillNumber());
-		bill.setUser(userData);
+		if (checkNull.isPresent()) { // check for value is present or not
+			uData = userlist.findUserByID(bg.getUserID());
+
+		} else
+			return bill;
+
+		bill.setUser(uData);
 		bill.setItems(bg.getItems());
 
 		for (BillItem item : bill.getItems()) {
-
-			item.setItemType(ItemList.findItemTypeByName(item.getItemName()));
+			if (item.getItemName().equals(""))
+				item.setItemType("other");
+			else
+				item.setItemType(ItemList.findItemTypeByName(item.getItemName()));
 		}
 		cd.discountCalculation(bill);
 
