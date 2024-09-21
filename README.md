@@ -11,16 +11,42 @@ A predetermined set of guidelines can be used to determine the discount for diff
 #How to install and setup
 
 Method 1: Using Maven
+
+Navigate to the root of the project via command line and execute the command
+
 mvn spring-boot:run
 
 Method 2:Run from an IDE
+
 a. Open the project in your preferred IDE (e.g., IntelliJ, Eclipse).
 
 b. Locate the main class SpringBootRetailApplication.java with the @SpringBootApplication annotation.
 
 c. Right-click the class and select Run or Debug to start the application.
 
-To Test the programme 
+How to Test the programme 
+
+Assumption 
+User:
+
+a. use userid 100 for employee
+
+b. use userid 102 for old customer(More then 2 year)
+
+c. use userid 103 for affiliate
+
+d. use userid 104 for customer
+
+Item
+
+a. use "Mobile" for electronics item
+
+b. use "Charger" for electronics item
+
+c. use "Soap" for grocery item
+
+d. use "Oil" for grocery item
+
 Step
 
 1. Open postman and put enter url http://localhost:8080/api/generatebill with get method selected in the drop down
@@ -67,6 +93,7 @@ ex
 }
 
 where the payableAmount show the amount calculate after the discount
+
 
 # key feature of Discount Calculator
 
