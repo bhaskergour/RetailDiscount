@@ -94,6 +94,17 @@ ex
 
 where the payableAmount show the amount calculate after the discount
 
+# How to generate test report
+
+Step
+
+1)	Navigate to the root of the project via command line and execute the command.
+
+2)	Execute the command "mvn surefire-report:report" to generate the html report.
+
+3)	On the root folder slect the file to open "target/reports/surefire.html".
+
+
 
 # key feature of Discount Calculator
 
