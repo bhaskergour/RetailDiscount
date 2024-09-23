@@ -8,7 +8,7 @@ A predetermined set of guidelines can be used to determine the discount for diff
 
 2) Spring boot 3.1.0
 
-# How to install and setup
+# How to install and build
 
 Method 1: Using Maven
 
