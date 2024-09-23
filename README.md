@@ -118,7 +118,7 @@ Purpose of this application is to find the net payable amount on a given bill by
 
 ## UML
 
-![alt text](./uml.png)How to install and build
+![alt text](./uml.png)
 
 ### CalculateBill.java
 
