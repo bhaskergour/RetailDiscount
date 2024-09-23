@@ -116,6 +116,8 @@ Purpose of this application is to find the net payable amount on a given bill by
 
 ![alt text](./Structure.png)
 
+##![alt text](./uml.png)How to install and build
+
 ### CalculateBill.java
 
 When a new request is received, this controller class is called, and it does the following actions: 
@@ -140,4 +142,3 @@ This factory class is used to retrieve the class object that will be utilized to
 ## AffiliateDiscount.java,CustomerDiscount.java,EmployeeDiscount.java,NoDiscount.java
 These classes include the logic to compute the discount because different user categories are connected with different discounts. 
 
-##![alt text](./uml.png)
